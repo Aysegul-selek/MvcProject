@@ -1,0 +1,58 @@
+﻿@model IEnumerable<CafeProject.Models.Category_table>
+
+@{
+    ViewBag.Title = "Category";
+    Layout = "~/Views/_LayoutPageMenu.cshtml";
+}
+
+<h2>Category</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Categoryname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.parentcategoryID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ısdeleted)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.createddate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.creatoruserID)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Categoryname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.parentcategoryID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ısdeleted)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.createddate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.creatoruserID)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.CategoryID }) |
+           
+            @Html.ActionLink("Delete", "Delete", new { id = item.CategoryID })
+        </td>
+    </tr>
+}
+
+</table>

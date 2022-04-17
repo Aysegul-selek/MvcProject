@@ -1,0 +1,28 @@
+﻿@model IEnumerable<CafeProject.Models.productproperty_table>
+
+@{
+    ViewBag.Title = "PRODUCTPROPERTY";
+    Layout = "~/Views/_LayoutPageMenu.cshtml";
+}
+
+<h2>PRODUCTPROPERTY</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new {  id=item.ProductpropertyID  }) |
+           
+            @Html.ActionLink("Delete", "Delete", new {  id=item.ProductpropertyID })
+        </td>
+    </tr>
+}
+
+</table>

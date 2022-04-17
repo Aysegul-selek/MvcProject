@@ -1,0 +1,65 @@
+﻿@model CafeProject.Models.Category_table
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/_LayoutPageMenu.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Category_table</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Categoryname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Categoryname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.parentcategoryID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.parentcategoryID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ısdeleted)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ısdeleted)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.createddate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.createddate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.creatoruserID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.creatoruserID)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Category")
+        </div>
+    }
+</div>

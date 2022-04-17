@@ -1,0 +1,51 @@
+﻿
+@using CafeProject.Models;
+
+@model List<product_table>
+
+@{
+
+    Layout = "~/Views/_LayoutPageMenu.cshtml";
+}
+
+
+
+<style>
+    #accordion {
+        border: 1px #ccc solid;
+        border-top: none;
+        width: 500px;
+    }
+
+        #accordion dt {
+            background: #ddd;
+            padding: 10px;
+            border-top: 1px #ccc solid;
+        }
+
+            #accordion dt a {
+                color: #000;
+                text-decoration: none;
+                display: block;
+            }
+
+        #accordion dd {
+            padding: 10px;
+        }
+</style>
+<script>
+
+    $(function () {
+        $('#accordion dd').hide();
+        $('#accordion dt a').click(function () {
+            $('#accordion dd').slideUp();
+            $(this).parent().next().slideDown();
+            return false;
+        });
+    });
+
+</script>
+<dl id="accordion">
+   
+
+</dl>
